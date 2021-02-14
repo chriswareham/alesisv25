@@ -64,4 +64,8 @@ public class Preset {
     public Sustain getSustain() {
         return sustain;
     }
+
+    public List<Byte> serialise() {
+        return List.of();
+    }
 }
