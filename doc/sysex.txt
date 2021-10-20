@@ -1,0 +1,146 @@
+# Request current settings:
+
+amidi -p hw:1,0,0 -S F000000E004162005DF7 -d
+
+F0       # Header
+00 00 0E # Alesis manufacturer ID
+00 41 62 # Indicates a settings request
+00 5D    # Expected size of data in bytes : 93
+F7       # Footer
+
+# Sample response:
+
+F0       # Header
+00 00 0E # Alesis manufacturer ID
+00 41 63 # Indicates a settings response
+00 5D    # Size of data in bytes : 93
+         # Data begins
+
+0C       # Key bed : transpose
+04       # Key bed : octave 
+00       # Key bed : MIDI channel
+07       # Key bed : velocity curve
+
+00       # Pitch wheel : MIDI channel
+
+00       # Mod wheel : MIDI channel
+01       # Mod wheel : CC
+00       # Mod wheel : min
+7F       # Mod wheel : max
+
+40       # Sustain : CC
+00       # Sustain : min
+7F       # Sustain : max
+00       # Sustain : MIDI Channel
+
+00       # Knob 1 : mode (0 CC, 1 aftertouch)
+14       # Knob 1 : CC
+00       # Knob 1 : min
+7F       # Knob 1 : max
+00       # Knob 1 : MIDI channel
+
+00       # Knob 2 : mode (0 CC, 1 aftertouch)
+15       # Knob 2 : CC
+00       # Knob 2 : min
+7F       # Knob 2 : max
+00       # Knob 2 : MIDI channel
+
+00       # Knob 3 : mode (0 CC, 1 aftertouch)
+16       # Knob 3 : CC
+00       # Knob 3 : min
+7F       # Knob 3 : max
+00       # Knob 3 : MIDI channel
+
+00       # Knob 4 : mode (0 CC, 1 aftertouch)
+17       # Knob 4 : CC
+00       # Knob 4 : min
+7F       # Knob 4 : max
+00       # Knob 4 : MIDI channel
+
+00       # Pad 1 : mode (0 note, 1 CC toggle, 2 CC momentary, 3 program change)
+2A       # Pad 1 : note / CC / program number
+00       # Pad 1 : fixed velocity / toggle on / momentary pressed / program bank LSB
+07       # Pad 1 : velocity curve / toggle off / momentary released / program bank MSB
+09       # Pad 1 : MIDI channel
+
+00       # Pad 2 : mode (0 note, 1 CC toggle, 2 CC momentary, 3 program change)
+2E       # Pad 2 : note / CC / program number
+00       # Pad 2 : fixed velocity / toggle on / momentary pressed / program bank LSB
+07       # Pad 2 : velocity curve / toggle off / momentary released / program bank MSB
+09       # Pad 2 : MIDI channel
+
+00       # Pad 3 : mode (0 note, 1 CC toggle, 2 CC momentary, 3 program change)
+33       # Pad 3 : note / CC / program number
+00       # Pad 3 : fixed velocity / toggle on / momentary pressed / program bank LSB
+07       # Pad 3 : velocity curve / toggle off / momentary released / program bank MSB
+09       # Pad 3 : MIDI channel
+
+00       # Pad 4 : mode (0 note, 1 CC toggle, 2 CC momentary, 3 program change)
+27       # Pad 4 : note / CC / program number
+00       # Pad 4 : fixed velocity / toggle on / momentary pressed / program bank LSB
+07       # Pad 4 : velocity curve / toggle off / momentary released / program bank MSB
+09       # Pad 4 : MIDI channel
+
+00       # Pad 5 : mode (0 note, 1 CC toggle, 2 CC momentary, 3 program change)
+24       # Pad 5 : note / CC / program number
+00       # Pad 5 : fixed velocity / toggle on / momentary pressed / program bank LSB
+07       # Pad 5 : velocity curve / toggle off / momentary released / program bank MSB
+09       # Pad 5 : MIDI channel
+
+00       # Pad 6 : mode (0 note, 1 CC toggle, 2 CC momentary, 3 program change)
+28       # Pad 6 : note / CC / program number
+00       # Pad 6 : fixed velocity / toggle on / momentary pressed / program bank LSB
+07       # Pad 6 : velocity curve / toggle off / momentary released / program bank MSB
+09       # Pad 6 : MIDI channel
+
+00       # Pad 7 : mode (0 note, 1 CC toggle, 2 CC momentary, 3 program change)
+32       # Pad 7 : note / CC / program number
+00       # Pad 7 : fixed velocity / toggle on / momentary pressed / program bank LSB
+07       # Pad 7 : velocity curve / toggle off / momentary released / program bank MSB
+09       # Pad 7 : MIDI channel
+
+00       # Pad 8 : mode (0 note, 1 CC toggle, 2 CC momentary, 3 program change)
+2D       # Pad 8 : note / CC / program number
+00       # Pad 8 : fixed velocity / toggle on / momentary pressed / program bank LSB
+07       # Pad 8 : velocity curve / toggle off / momentary released / program bank MSB
+09       # Pad 8 : MIDI channel
+
+00       # Button 1 : mode (0 CC toggle, 1 CC momentary, 2 program change)
+30       # Button 1 : CC / program number
+7F       # Button 1 : toggle on / momentary pressed / program bank LSB
+00       # Button 1 : toggle off / momentary released / program bank MSB
+00       # Button 1 : MIDI channel
+
+00       # Button 2 : mode (0 CC toggle, 1 CC momentary, 2 program change)
+31       # Button 2 : CC / program number
+7F       # Button 2 : toggle on / momentary pressed / program bank LSB
+00       # Button 2 : toggle off / momentary released / program bank MSB
+00       # Button 2 : MIDI channel
+
+00       # Button 3 : mode (0 CC toggle, 1 CC momentary, 2 program change)
+32       # Button 3 : CC / program number
+7F       # Button 3 : toggle on / momentary pressed / program bank LSB
+00       # Button 3 : toggle off / momentary released / program bank MSB
+00       # Button 3 : MIDI channel
+
+00       # Button 4 : mode (0 CC toggle, 1 CC momentary, 2 program change)
+33       # Button 4 : CC / program number
+7F       # Button 4 : toggle on / momentary pressed / program bank LSB
+00       # Button 4 : toggle off / momentary released / program bank MSB
+00       # Button 4 : MIDI channel
+
+         # Data ends
+F7       # Footer
+
+# Send settings:
+
+F0       # Header
+00 00 0E # Alesis manufacturer ID
+00 41 61 # Indicates a settings send
+00 5D    # Size of data in bytes : 93
+         # Data begins
+
+         *** DATA IN SAME FORMAT AS ABOVE ***
+
+         # Data ends
+F7       # Footer
